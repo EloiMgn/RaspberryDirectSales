@@ -1,11 +1,10 @@
 import { FieldError, Label, SelectField } from '@redwoodjs/forms';
 
 export const QUERY = gql`
-  query ClientSelectionQuery {
-    clients {
+  query SalesQuery {
+    sellers {
       id
-      title
-      createdAt
+      name
     }
   }
 `;
@@ -18,33 +17,33 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ clients }) => {
+export const Success = ({ sellers }) => {
   return (
     <>
       <Label
-        name="client"
+        name="seller"
         className="rw-label"
         errorClassName="rw-label rw-label-error"
       >
-        Client
+        Vendeur
       </Label>
 
       <SelectField
-        name="client"
+        name="seller"
         className="rw-input"
         errorClassName="rw-input rw-input-error"
         validation={{ required: true }}
       >
-        {clients.map((item) => {
+        {sellers.map((item) => {
           return (
-            <option key={item.id} value={`${item.title}`}>
-              {item.title}
+            <option key={item.id} value={`${item.name}`}>
+              {item.name}
             </option>
           );
         })}
       </SelectField>
 
-      <FieldError name="client" className="rw-field-error" />
+      <FieldError name="seller" className="rw-field-error" />
     </>
   );
 };

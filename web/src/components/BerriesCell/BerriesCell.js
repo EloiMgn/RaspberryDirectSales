@@ -20,6 +20,7 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ products }) => {
+  console.log(products);
   return (
     <>
       <Label
@@ -38,7 +39,7 @@ export const Success = ({ products }) => {
       >
         {products.map((item) => {
           return (
-            <option key={item.id} value={`${item.id}`}>
+            <option key={item.id} value={item.id}>
               {item.title}
             </option>
           );

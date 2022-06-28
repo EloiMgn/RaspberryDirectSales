@@ -10,6 +10,9 @@ const OrderLayout = ({ children }) => {
         <nav>
           <ul>
             <li>
+              <Link to={routes.order()}>Nouvelle commande</Link>
+            </li>
+            <li>
               <Link to={routes.home()}>Accueil</Link>
             </li>
             <li>
@@ -20,6 +23,9 @@ const OrderLayout = ({ children }) => {
             </li>
             <li>
               <Link to={routes.products()}>Produits</Link>
+            </li>
+            <li>
+              <Link to={routes.sellers()}>Vendeurs</Link>
             </li>
           </ul>
         </nav>

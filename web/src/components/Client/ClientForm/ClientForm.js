@@ -8,8 +8,6 @@ import {
   SelectField,
 } from '@redwoodjs/forms';
 
-import BerriesCell from 'src/components/BerriesCell';
-
 const ClientForm = (props) => {
   const onSubmit = (data) => {
     props.onSave(data, props?.client?.id);
@@ -24,7 +22,7 @@ const ClientForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-        <BerriesCell />
+        {/* <SalesCell /> */}
         <Label
           name="title"
           className="rw-label"
