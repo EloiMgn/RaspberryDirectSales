@@ -18,6 +18,9 @@ const OrderLayout = ({ children }) => {
             <li>
               <Link to={routes.clients()}>Clients</Link>
             </li>
+            <li>
+              <Link to={routes.products()}>Produits</Link>
+            </li>
           </ul>
         </nav>
       </header>

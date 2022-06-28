@@ -11,10 +11,17 @@ import { Router, Route, Set } from '@redwoodjs/router';
 
 import ClientsLayout from 'src/layouts/ClientsLayout';
 import OrdersLayout from 'src/layouts/OrdersLayout';
+import ProductsLayout from 'src/layouts/ProductsLayout';
 
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ProductsLayout}>
+        <Route path="/products/new" page={ProductNewProductPage} name="newProduct" />
+        <Route path="/products/{id:Int}/edit" page={ProductEditProductPage} name="editProduct" />
+        <Route path="/products/{id:Int}" page={ProductProductPage} name="product" />
+        <Route path="/products" page={ProductProductsPage} name="products" />
+      </Set>
       <Set wrap={ClientsLayout}>
         <Route path="/clients/new" page={ClientNewClientPage} name="newClient" />
         <Route path="/clients/{id:Int}/edit" page={ClientEditClientPage} name="editClient" />
